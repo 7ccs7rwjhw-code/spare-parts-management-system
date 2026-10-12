@@ -55,6 +55,13 @@ curl --fail http://localhost:8000/health/
 
 ## 分支与 PR
 
-本次开发提交保存在 develop。面向 main 的 PR 标题/正文已准备于 docs/PULL_REQUEST.md。
-GitHub API请求返回Forbidden，CLI认证检查未通过；远程推送及PR创建结果将在
-交付时如实说明，不将本地准备当成已创建的PR。
+代码提交：`9f25355`，已推送远程 develop。远程仓库原先为空，已将基础架构提交
+`3e33dbc` 推送为 main，作为 PR 比较基线。本次没有合并功能代码到 main。
+
+已实际调用 gh pr create（base=main、head=develop），返回：
+`Post "https://api.github.com/graphql": Forbidden`。**PR尚未创建**。
+Git推送成功；API访问被当前云环境拒绝，不能据此认定Git凭据不可用。
+自动创建PR需要环境允许 api.github.com。PR正文保存在 docs/PULL_REQUEST.md。
+
+可直接打开 [main...develop比较页](https://github.com/7ccs7rwjhw-code/spare-parts-management-system/compare/main...develop?expand=1)
+审核并提交PR；GitHub Actions将在分支推送/PR触发，远程CI结果本次尚未读取。
