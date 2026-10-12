@@ -1,0 +1,8 @@
+accounts
+ [X] 0001_initial
+inventory
+ [X] 0001_initial
+requests
+ [X] 0001_initial
+approvals
+ [X] 0001_initial

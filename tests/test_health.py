@@ -22,6 +22,9 @@ def test_health_reports_unavailable_database(client):
 @pytest.mark.django_db
 def test_user_persistence():
     from django.contrib.auth import get_user_model
-    user = get_user_model().objects.create_user(username="tester", password="test-password")
+
+    user = get_user_model().objects.create_user(
+        username="tester", password="test-password"
+    )
     user.refresh_from_db()
     assert user.check_password("test-password")

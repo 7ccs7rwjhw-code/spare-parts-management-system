@@ -10,3 +10,7 @@ htmlcov/
 staticfiles/
 media/
 *.sqlite3
+private_media/
+source/
+archive/
+backups/
